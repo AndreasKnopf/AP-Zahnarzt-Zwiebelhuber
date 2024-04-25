@@ -1,0 +1,838 @@
+@font-face {
+    font-family: "Montserrat";
+    src: local("Montserrat"), 
+         url(../fonts/Montserrat/static/Montserrat-Regular.ttf);
+         font-weight: 200;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: local("Montserrat"), 
+         url(../fonts/Montserrat/static/Montserrat-Medium.ttf);
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: local("Montserrat"), 
+         url(../fonts/Montserrat/static/Montserrat-Bold.ttf);
+    font-weight: bold;
+}
+
+:root {
+    --akzentfarbe: #3daae2;
+    --akzentfarbe2: #0767b1;
+    --textschwarz: #3f3f3f;
+    --hover-color: #ffffff28;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 200;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin-top: 195px;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 2.2rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+/* Header */
+
+.header-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 140px;
+    padding: 0 30px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    
+    img {
+        height: 80px;
+    }
+    
+    .header-info {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        
+        a {
+            display: flex;
+            padding: 0 20px;
+            text-decoration: none;
+            color: var(--akzentfarbe);
+            
+            i {
+                padding-right: 20px;
+                height: 25px;
+            }
+                      
+            span {
+                font-weight: bold;
+                font-size: 0.9rem;
+            }
+        }
+
+        .telefon:hover a i, 
+        .telefon:hover a span,
+        .location:hover a i,
+        .location:hover a span {
+            color: var(--akzentfarbe2);
+        }
+        
+        .telefon:hover a i,
+        .location:hover a i {
+            animation: rotate-scale-up 0.25s linear;
+        }
+    }
+}
+
+@keyframes rotate-scale-up {
+    0% {
+        transform: scale(1) rotateZ(0);
+      }
+      25% {
+        transform: scale(1.2) rotateZ(15deg);
+      }
+      50% {
+        transform: scale(1) rotateZ(-15deg);
+      }
+      75% {
+        transform: scale(1.2) rotateZ(15deg);
+      }
+      100% {
+        transform: scale(1) rotateZ(0deg);
+      }
+}
+
+@media screen and (max-width:970px) {
+    .header-box {
+
+        .header-info {
+            display: inline-block;
+
+            a {
+                font-size: 0.9em;
+                padding-bottom: 1em;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:700px) {
+    .header-box {
+
+        .header-info {
+
+            a {
+                padding-bottom: 1.5em;
+
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+/* Navigationsleiste */
+
+.nav-bar {
+    position: relative;
+    width: 100vw;
+    height: 55px;
+    background: radial-gradient(circle, rgba(61,170,226,1) 0%, rgba(7,103,177,1) 100%);
+    position: fixed;
+    top: 140px;
+
+    .burger-menu {
+        position: absolute;
+        display: none;
+    }
+    
+    ul {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        align-items: center;
+        list-style: none;
+        
+        li {
+            padding: 10px 30px;
+            
+            a {
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+                text-transform: uppercase;
+                
+                i {
+                    padding-left: 10px;
+                }
+            }
+        }
+        #aktiv {
+            background-color: var(--akzentfarbe2);
+            border-radius: 10px;
+        }
+
+        li:hover {
+            background-color: var(--akzentfarbe2);
+            border-radius: 10px;
+        }
+
+        .submenu-dropdown {
+            position: relative;
+            
+            .submenu {
+                display: none;
+                background-color: var(--akzentfarbe);
+                color: white;
+                height: auto;
+                border-radius: 20px;
+            }
+        }
+        .submenu-dropdown:hover .submenu {
+            display: block;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            height: auto;
+        }
+    }
+}
+
+@media screen and (max-width:800px) {
+    .nav-bar {
+
+        .burger-menu {
+            display: inline-block;
+            color: white;
+            font-size: 2rem;
+            padding: 10px 40px;
+        }
+        
+        .menu {
+            display: none;
+        }
+        
+        .burger-menu:hover + .menu {
+            display: inline-block;
+            height: auto;
+            background-color: var(--akzentfarbe);
+            margin-top: 3.3rem;
+        }
+
+        .menu:hover {
+            display: inline-block;
+            height: auto;
+            margin-top: 3.3rem;
+            background-color: var(--akzentfarbe);
+            
+            .submenu-dropdown:hover .submenu {
+                left: 180px;
+                top: -2px;
+            }
+        }
+    }
+}
+
+/* Main */
+
+.cover-bild {
+    width: 100vw;
+    height: 550px;
+    background-color: lawngreen;
+    background-image: url(../images/zahnarzt-cover.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.welcome-container {
+    width: 100vw;
+    height: auto;
+    padding: 50px 15%;
+    background-color: var(--akzentfarbe2);
+    color: white;
+    
+    h1, h2 {
+        text-align: center;
+        padding-bottom: 10px;
+        font-weight: bold;
+    }
+    
+    h2 {
+        padding-bottom: 50px;
+    }
+    
+    p {
+        padding-bottom: 20px;
+        line-height: 1.5rem;
+    }
+}
+
+/*  BLOG Bereich */
+
+.blog-bereich {
+    width: 100vw;
+    height: auto;
+    padding: 50px 15%;
+    scroll-margin-top: 195px;
+
+    h2 {
+        padding-bottom: 50px;
+    }
+
+    .blog-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2%;
+        padding-bottom: 2em;
+
+        .blog-box {
+            height: auto;
+            background-color: var(--akzentfarbe2);
+            background: radial-gradient(circle, rgb(31, 143, 199) 0%, rgba(7,103,177,1) 100%);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 10px 10px 15px 0px #3f3f3f8f;
+            
+            h3 {
+                padding-bottom: 20px;
+                font-size: 1rem;
+                font-weight: bold;
+                color: white;
+            }
+            
+            p {
+                color: white;
+                padding-bottom: 20px;
+                font-size: 0.8rem;
+                line-height: 1.5rem;
+            }
+            
+            a {
+                text-decoration: none;
+                font-size: 0.8rem;
+                color: white;
+                font-style: italic;
+                font-weight: 600;
+            }
+    
+            a::after {
+                font-family: "FontAwesome";
+                content: "\f105";
+                padding-left: 5px;
+                color: white;
+            }
+
+            a:hover {
+                font-size: 0.9rem;
+                background-color: var(--hover-color);
+                border-radius: 10px;
+            }
+        }
+    }
+}
+
+/* Kontaktbereich */
+
+.kontakt-bereich {
+    width: 100vw;
+    height: auto;
+    padding: 50px 15%;
+    background-color: var(--akzentfarbe2);
+    line-height: 1.5rem;
+    scroll-margin-top: 195px;
+
+    h2 {
+        font-size: 2.3rem;
+        padding-bottom: 50px;
+        color: white;
+        line-height: 2.5rem;
+    }
+
+    .kontakt-box {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 50px;
+
+        .anschrift {
+            color: white;
+            
+            address {
+                font-style: normal;
+                
+                a {
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+    
+            h3 {
+                padding-top: 30px;
+                padding-bottom: 10px;
+                font-weight: 600;
+            }
+
+            a {
+                text-decoration: none;
+                color: white;
+            }
+
+            > a::before {
+                font-family: FontAwesome;
+                content: "\f105";
+                padding-right: 1rem;
+            }
+
+            > a:hover {
+                background-color: var(--hover-color);
+                border-radius: 10px;
+                padding: 2px 10px;
+            }
+        }
+
+        .anschrift > a:last-of-type {
+            margin-bottom: 50px;
+        } 
+
+        .anfrage {
+            width: 60%;
+
+            form {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+
+                .form-group {
+                    display: flex;
+                    justify-content: flex-end;
+                    color: white;
+                    padding-bottom: 20px;
+                    
+                    label {
+                        padding-right: 50px;
+                    }
+                    
+                    input:not(.abschicken), textarea, select {
+                        width: 70%;
+                        height: 40px;
+                        padding-left: 10px;
+                        font-weight: bold;
+                        font-size: 1rem;
+                        color: var(--textschwarz);
+                        border: none;
+                        border-radius: 10px;
+                    }
+    
+                    input:hover, textarea:hover, select:hover {
+                        outline: 5px solid var(--akzentfarbe);
+                    }
+    
+                    input::placeholder, textarea::placeholder {
+                        color: #d4d4d4;
+                        font-style: italic;
+                    }
+    
+                    textarea {
+                        height: 250px;
+                        resize: none;
+                    }
+
+                    textarea::placeholder {
+                        padding-top: 10px;
+                    }
+    
+                    .abschicken {
+                        margin-top: 30px;
+                        font-size: 1rem;
+                        font-weight: bold;
+                        padding: 5px 15px;
+                        cursor: pointer;
+                        border: none;
+                        border-radius: 10px;
+                    }
+                }
+    
+                span {
+                    display: block;
+                    color: white;
+                    text-align: right;
+                    font-size: 0.9rem;
+                    font-style: italic;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1390px) {
+    .kontakt-bereich {
+        text-align: center;
+        
+        .kontakt-box{
+            display: flex;
+            justify-content: center;
+
+            .anschrift, .anfrage {
+                width: 90%;
+            }
+        }   
+    }
+}
+
+@media screen and (max-width:800px) {
+    .kontakt-bereich {
+
+        .kontakt-box {
+
+            .anfrage {
+        
+                form {
+                    .form-group {
+                        display: block;
+                        margin: auto;
+                        
+                        input, select, textarea {
+                            margin-top: 10px;
+                        }
+                        
+                        select {
+                            width: 90%;
+                        }
+                    }
+                    
+                    .send-button {
+                        
+                        .abschicken {
+                            text-align: center;
+                            padding: 10px 30px;
+                        }
+                    }
+
+                    .titel-selector {
+                        width: 77%;
+                        justify-content: center;
+                    }
+
+                    span {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Google Map */
+
+.map {
+    scroll-margin-top: 195px;
+    iframe {
+        width: 100vw;
+        height: 500px;
+    }
+}
+
+
+/*  Footer  */
+
+.footer-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 140px;
+    padding: 0 30px;
+    background-color: white;
+
+    a {
+        padding: 0 20px;
+        text-decoration: none;
+        color: var(--akzentfarbe2);
+        font-weight: 400;
+        
+        img {
+            height: 70px;
+        }
+    }
+
+    .footer-links, .nach-oben {
+        a {
+            font-size: 0.8rem;
+        }
+
+        a:hover {
+            color: var(--akzentfarbe);
+        }
+    }
+
+    .footer-links a:first-child::after {
+        font-family: "FontAwesome";
+        content: "\f142";
+        padding-left: 45px;
+    }
+
+    .nach-oben a::after {
+        font-family: "FontAwesome";
+        content: "\f106";
+        padding-left: 10px;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .footer-box {
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            a {
+                padding: 5px 0;
+            }
+        }
+        
+        .footer-links a:first-child::after {
+            content: none;
+        }
+    }
+}
+
+@media screen and (max-width:500px) {
+    .footer-box {
+        display: inline-block;
+        text-align: center;
+        padding-top: 30px;
+
+        .footer-links, .nach-oben {
+            padding-top: 20px;    
+        }
+
+        .nach-oben {
+            padding-bottom: 30px;
+        }
+    }
+}
+
+
+/* ------  Seite: Ästhetische Zahnheilkunde --------- */
+
+.cover-bild-ae-zahnheilkunde {
+    width: 100vw;
+    height: 550px;
+    background-color: lawngreen;
+    background-image: url(../images/aesthetik-cover.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.zahnheilkunde-container {
+
+    ul {
+        padding-left: 30px;
+
+        li {
+            padding-bottom: 10px;
+        }
+    }
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 400px);
+    grid-template-rows: 250px;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 30px;
+    background-color: white;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        scroll-snap-align: end;
+    }
+}
+
+/* ------  Seite: Implantologie --------- */
+
+.cover-bild-implantat {
+    width: 100vw;
+    height: 550px;
+    background-color: lawngreen;
+    background-image: url(../images/implantat-01.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.implantat-container {
+    
+    h4 {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-weight: 600;
+    }
+    
+    ul {
+        padding-left: 30px;
+
+        li {
+            padding-bottom: 10px;
+        }
+    }
+}
+
+/* ------  Seite: Prophylaxe --------- */
+
+.cover-bild-prophylaxe {
+    width: 100vw;
+    height: 550px;
+    background-color: lawngreen;
+    background-image: url(../images/daumen-hoch.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.prophylaxe-container {
+    
+    h4 {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-weight: 600;
+    }
+    
+    ul {
+        padding-left: 30px;
+
+        li {
+            padding-bottom: 10px;
+        }
+    }
+}
+
+/* ------  Seite: Wurzelbehandlung --------- */
+
+.cover-bild-wurzelbehandlung {
+    width: 100vw;
+    height: 550px;
+    background-color: lawngreen;
+    background-image: url(../images/dentist-gal1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.wurzelbehandlung-container {
+    
+    h4 {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-weight: 600;
+    }
+}
+
+/* ------  Seite: Praxis --------- */
+
+.cover-bild-praxis {
+    width: 100vw;
+    height: 550px;
+    background-color: lawngreen;
+    background-image: url(../images/raum-1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+/* ------  Seite: Team --------- */
+
+.cover-bild-team {
+    width: 100vw;
+    height: 550px;
+    background-color: lawngreen;
+    background-image: url(../images/team.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.team-container {
+    
+    .portrait-box {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-rows: auto;
+        gap: 2%;
+        text-align: center;
+        padding-bottom: 130px;
+            
+        .portrait-card {
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 200px;
+            
+            img {
+                width: 250px;
+                height: 250px;
+                box-shadow: 10px 10px 15px 0px #3f3f3fb0;
+                border-radius: 50%;
+            }
+            
+            h3 {
+                padding-top: 30px;
+                padding-bottom: 5px;
+            }
+    
+            p {
+                font-size: 0.9rem;
+            }
+        }
+    }
+    
+    .portrait-infotext {
+        
+        h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding-bottom: 1em;
+        }
+    
+        p {
+            padding-bottom: 3em;
+        }
+    }
+}
+
+@media screen and (max-width:1340px) {
+    .team-container {
+        
+        .portrait-infotext{
+            margin-top: 100px;
+        }
+    }
+}
+
+@media screen and (max-width:873px) {
+    .team-container {
+        
+        .portrait-infotext{
+            margin-top: 450px;
+        }
+    }
+}

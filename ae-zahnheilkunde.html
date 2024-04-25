@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--  -->
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Ästhetische Zahnheilkunde</title>
+</head>
+<body>
+    <header>
+        <div class="header-box">
+            <a href="./index.html"><img src="./images/logo/Spiegel-Zahnarzt-Logo_text.jpg" alt="Logo"></a>
+            <div class="header-info">
+                <div class="telefon">
+                    <a href="tel:+49711123456" target="_blank"><i class="fa-solid fa-phone fa-2x"></i><span>Rufen Sie uns an:<br>(+49) 0711 123456</span></a>
+                </div>
+                <div class="location">
+                    <a href="#map"><i class="fa-solid fa-location-dot fa-2x"></i><span>Gemüsegarten 20<br>70327 Stuttgart</span></a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="nav-bar">
+            <i class="fa-solid fa-bars burger-menu"></i>
+            <ul class="menu">
+                <li><a href="./index.html">Startseite</a></li>
+                <li id="aktiv" class="submenu-dropdown"><a href="#blog-leistungen">Leistungen<i class="fa-solid fa-angle-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="./ae-zahnheilkunde.html">Ästhetische Zahnheilkunde</a></li>
+                        <li><a href="./implantologie.html">Implantologie</a></li>
+                        <li><a href="./prophylaxe.html">Prophylaxe</a></li>
+                        <li><a href="./wurzelbehandlung.html">Wurzelbehandlung</a></li>
+                    </ul>
+                </li>
+                <li><a href="./praxis.html">Praxis</a></li>
+                <li><a href="./team.html">Team</a></li>
+                <li><a href="#kontakt-bereich">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="cover-bild-ae-zahnheilkunde"></div>
+        
+        <div class="welcome-container zahnheilkunde-container">
+            <h2>Ästhetische Zahnheilkunde</h2>
+            <p>In den letzten Jahren ist die Ästhetik in der Zahnmedizin, insbesondere in unserer Zahnarztpraxis, immer wichtiger geworden. Dank moderner Technologien können wir heute "unsichtbare" Füllungen und zahnfarbene Behandlungen problemlos anbieten.</p>
+            <p>Neue Materialien wie Kunststoffe auf Nanotechnologie-Basis mit sehr feinen Partikeln, verbesserte Klebeverfahren und Hochleistungskeramiken ermöglichen ästhetische Zahnversorgungen in einer Qualität, die vor einigen Jahren noch undenkbar gewesen wäre.</p> <br><br>
+            <p>Die Möglichkeiten der modernen Zahnästhetik umfassen:</p>
+            <ul>
+                <li>Hochästhetische, zahnfarbene Füllungen mit modernen Hybrid-Composites und Nanotechnologie-Kunststoffen.</li>
+                <li>Wiederaufbau geschädigter Zähne mit hochästhetischen Composites oder Hochleistungskeramiken durch fortschrittliche Adhäsivtechniken.</li>
+                <li>"Direct Veneering" (Verblendungen und Zahnumformungen mit Nanohybrid-Kunststoffen) für kosmetische Formkorrekturen.</li>
+            </ul>
+        </div>
+
+        <div class="gallery">
+            <img src="./images/chair-2584260_1920.jpg" alt="Behandlungsstuhl">
+            <img src="./images/dentist-gal1.jpg" alt="Behandlung">
+            <img src="./images/dentist-span.jpg" alt="Zahnmuster">
+            <img src="./images/daumen-hoch.jpg" alt="Daumen hoch">
+        </div>
+
+        <section id="kontakt-bereich" class="kontakt-bereich">
+            <h2>Kontakt & Terminanfrage</h2>
+
+            <div class="kontakt-box">
+                <div class="anschrift">
+                    <address>
+                        Zahnarztpraxis Dr. Ignaz Zwiebelhuber<br>
+                        Gemüsegarten 20<br>
+                        70327 Stuttgart<br>
+                        <a href="tel:+49711123456" target="_blank">Tel.: (+49) 0711 123456</a><br>
+                        <a href="mailto:kontakt@ignaz-zwiebelhuber.de" target="_blank">E-Mail: kontakt@ignaz-zwiebelhuber.de</a>
+                    </address>
+                    <h3>Sprechzeiten</h3>
+                    <p>Montag bis Donnerstag: 8:00 bis 18:00 Uhr</p>
+                    <p>Freitag: 8:00 bis 14:00 Uhr</p>
+                    <h3>Wegbeschreibung</h3>
+                    <a href="#map">zu Google Maps</a>
+                </div>
+    
+                <div class="anfrage">
+                    <form>
+                        <div class="form-group">
+                            <label for="valuelist">Titel *</label>
+                            <select name="valuelist" id="valuelist">
+                                <option value="choose">Frau</option>
+                                <option value="herr">Herr</option>
+                                <option value="frau-dr">Frau Dr.</option>
+                                <option value="herr-dr">Herr Dr.</option>
+                                <option value="dr">Dr.</option>
+                                <option value="nichts">-</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>Vorname *</label> 
+                            <input type="text" class="form-control" name="vorname" placeholder="Vorname" required="required">
+                        </div>
+                      
+                        <div class="form-group">
+                            <label>Nachname *</label> 
+                            <input type="text" class="form-control" name="nachname" placeholder="Nachname" required="required">
+                        </div>
+                      
+                        <div class="form-group">
+                            <label>E-Mail *</label> 
+                            <input type="email" class="form-control" name="email_name" placeholder="ihre@email.de">
+                        </div>
+                      
+                        <div class="form-group">
+                            <label>Betreff *</label> 
+                            <input type="text" class="form-control" name="betreff" placeholder="Betreff" required="required">
+                        </div>
+                      
+                        <div class="form-group">
+                            <label>Mitteilung *</label> 
+                            <textarea class="form-control" name="mitteilung" placeholder="Mitteilung" required="required"></textarea>
+                        </div>
+                        
+                        <span>Felder markiert mit * sind Pflichtfelder!</span>
+                        
+                        <div class="form-group">
+                            <input type="submit" class="abschicken" name="abschicken" value="Abschicken">
+                        </div>
+                      </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="map" class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d25941.35365949615!2d9.194811614135315!3d48.78207240684973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDjCsDQ2JzIyLjEiTiA5wrAxMic1Ny40IkU!5e0!3m2!1sde!2sde!4v1713959141253!5m2!1sde!2sde" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-box">
+            <a href="./index.html"><img src="./images/logo/Spiegel-Zahnarzt-Logo.png" alt="Logo"></a>
+            <div class="footer-links">
+                <a href="#" target="_blank">Impressum</a>
+                <a href="#" target="_blank">Datenschutzerklärung</a>
+            </div>
+            <div class="nach-oben">
+                <a href="#top">nach oben</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
